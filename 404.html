@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - SEGMENTATION FAULT</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&display=swap');
+    
+    :root {
+      --neon-emerald: #10b981;
+      --deep-void: #020204;
+      --dim-gray: #71717a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--deep-void);
+      color: var(--neon-emerald);
+      font-family: 'JetBrains Mono', monospace;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      perspective: 1000px;
+    }
+
+    .crt-grid {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+      background-size: 100% 4px, 6px 100%;
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .terminal-container {
+      border: 1px solid var(--neon-emerald);
+      background: rgba(4, 4, 8, 0.9);
+      width: 90%;
+      max-width: 600px;
+      padding: 30px;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.15);
+      position: relative;
+      animation: glitch 1.5s infinite;
+    }
+
+    .terminal-header {
+      border-bottom: 1px dashed var(--neon-emerald);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      background-color: #ef4444;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 10px #ef4444;
+      animation: blink 1s infinite steps(2);
+    }
+
+    .error-code {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--dim-gray);
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .interactive-log {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      padding: 15px;
+      border-radius: 3px;
+      margin-bottom: 25px;
+      font-size: 11px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    .log-line {
+      margin-bottom: 6px;
+    }
+
+    .log-line.danger {
+      color: #ef4444;
+    }
+
+    .btn-action {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid var(--neon-emerald);
+      color: var(--neon-emerald);
+      padding: 12px 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-action:hover {
+      background: var(--neon-emerald);
+      color: var(--deep-void);
+      box-shadow: 0 0 15px var(--neon-emerald);
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    @keyframes glitch {
+      0% { transform: skew(0deg); }
+      2% { transform: skew(2deg); filter: hue-rotate(90deg); }
+      4% { transform: skew(-2deg); }
+      6% { transform: skew(0deg); }
+      100% { transform: skew(0deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="crt-grid"></div>
+  
+  <div class="terminal-container">
+    <div class="terminal-header">
+      <div class="error-code">📡 ANOMALY DETECTED</div>
+      <div class="status-dot"></div>
+    </div>
+    
+    <h1>ERR_404: SECTOR_NOT_FOUND</h1>
+    <p>You have navigated outside the verified boundaries of Ismail Ibne Ratul's secure network. Your coordinates have been flagged.</p>
+    
+    <div class="interactive-log">
+      <div class="log-line danger">[SYSTEM WARNING] Unauthorized pointer jump referenced.</div>
+      <div class="log-line">[SYSTEM INFO] Resolving target address: <span style="color:#fff;" id="current-url"></span></div>
+      <div class="log-line">[SYSTEM INFO] Initiating diagnostic trace...</div>
+      <div class="log-line danger">[SYSTEM ERR] Sector unreadable (404 Page Fault).</div>
+      <div class="log-line">[SYSTEM INFO] Safe backup port available at home base.</div>
+    </div>
+
+    <a href="/" class="btn-action">🔌 RE-CONNECT ROUTING PROTOCOL</a>
+  </div>
+
+  <script>
+    document.getElementById('current-url').innerText = window.location.pathname;
+    
+    // Auto-routing if user remains idle
+    setTimeout(() => {
+      console.log("Automatic routing initiated...");
+      window.location.href = "/";
+    }, 12000);
+  </script>
+</body>
+</html>
