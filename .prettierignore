@@ -1,0 +1,12 @@
+dist/
+build/
+node_modules/
+package-lock.json
+github-portfolio-cache.json
+firebase-blueprint.json
+public/
+assets/.aistudio/
+*.png
+*.jpg
+*.ico
+*.svg

@@ -1,0 +1,21 @@
+# Handle line endings automatically for files detected as text
+* text=auto
+
+# Denote all files that are truly text and should have normal lf line endings
+*.ts text eol=lf
+*.tsx text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.md text eol=lf
+*.xml text eol=lf
+
+# Denote binary files that should not be normalized
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.svg text

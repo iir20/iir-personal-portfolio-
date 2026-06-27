@@ -1,0 +1,9 @@
+# CODEOWNERS - GitHub repository ownership rules
+
+# Default owner for everything
+*       @im-ismail-ibne-ratul ibnaratul.2025@gmail.com
+
+# Specific directories
+/.github/workflows/   @im-ismail-ibne-ratul ibnaratul.2025@gmail.com
+/server/             @im-ismail-ibne-ratul ibnaratul.2025@gmail.com
+/src/                @im-ismail-ibne-ratul ibnaratul.2025@gmail.com

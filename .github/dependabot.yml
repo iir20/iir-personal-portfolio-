@@ -1,0 +1,22 @@
+# dependabot.yml - Scheduled dependency updates config
+version: 2
+updates:
+  # Check for npm dependency updates
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "08:00"
+      timezone: "America/New_York"
+    open-pull-requests-limit: 5
+    reviewers:
+      - "im-ismail-ibne-ratul"
+
+  # Check for GitHub Actions updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "im-ismail-ibne-ratul"

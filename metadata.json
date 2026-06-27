@@ -1,0 +1,8 @@
+{
+  "name": "Remix: Ratul’s Cybernetic Terminal",
+  "description": "A sleek, Nothing OS-inspired cyberpunk portfolio for a Bangladeshi developer specializing in cybersecurity, Linux, and futuristic web experiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
