@@ -50,6 +50,8 @@ export interface GitHubRepository {
     html_url: string;
     zipball_url: string;
   } | null;
+  readme?: string;
+  readme_parsed?: any;
 }
 
 export interface GitHubProfile {

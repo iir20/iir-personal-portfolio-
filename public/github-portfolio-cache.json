@@ -1,0 +1,606 @@
+{
+  "lastSync": "2026-06-27T18:07:01.062Z",
+  "status": "OK",
+  "profile": {
+    "login": "iir20",
+    "name": "Ismail Ibna Ratul",
+    "avatar_url": "https://avatars.githubusercontent.com/u/182823546?v=4",
+    "html_url": "https://github.com/iir20",
+    "bio": "Enthusiastic ",
+    "public_repos": 6,
+    "followers": 1,
+    "following": 0,
+    "created_at": "2024-09-25T21:41:22Z"
+  },
+  "repositories": [
+    {
+      "id": 1282389866,
+      "name": "iir-personal-portfolio-",
+      "full_name": "iir20/iir-personal-portfolio-",
+      "description": "my personal portfolio website ",
+      "html_url": "https://github.com/iir20/iir-personal-portfolio-",
+      "homepage": "",
+      "language": "TypeScript",
+      "languages": [
+        "TypeScript",
+        "HTML",
+        "CSS",
+        "Dockerfile"
+      ],
+      "topics": [],
+      "license": {
+        "name": "MIT License",
+        "spdx_id": "MIT"
+      },
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0,
+      "open_issues_count": 1,
+      "pushed_at": "2026-06-27T18:04:26Z",
+      "created_at": "2026-06-27T17:51:46Z",
+      "size": 0,
+      "visibility": "public",
+      "default_branch": "main",
+      "clone_url": "https://github.com/iir20/iir-personal-portfolio-.git",
+      "pinned": false,
+      "wip": false,
+      "status": "Active",
+      "latest_commit": {
+        "message": "build: fix asset paths for GitHub Pages deployment\n\nUpdate base path configuration and asset references to relative paths to ensure proper loading when hosted as a GitHub Pages project sub-directory.",
+        "date": "2026-06-27T18:04:26Z",
+        "author": "iir20"
+      },
+      "latest_release": null,
+      "readme": "# 🌐 ISMAIL IBNE RATUL — CYBERSPACE DIGITAL OPERATING SYSTEM (OS)\n\n<div align=\"center\">\n  <img src=\"public/favicon.svg\" alt=\"Cyberspace OS Logo\" width=\"120\" height=\"120\" style=\"margin-bottom: 20px;\" />\n  <p><em>\"An ultra-high-fidelity, zero-trust cyberpunk digital terminal and administrative operating portfolio.\"</em></p>\n</div>\n\n---\n\n<div align=\"center\">\n\n[![Automated Build & Deploy Status](https://img.shields.io/github/actions/workflow/status/im-ismail-ibne-ratul/portfolio/deploy.yml?branch=main&style=for-the-badge&color=10b981&label=CI/CD%20BUILD)](https://github.com/im-ismail-ibne-ratul/portfolio/actions)\n[![License: MIT](https://img.shields.io/badge/License-MIT-059669.svg?style=for-the-badge)](LICENSE)\n[![Security Scan Integrity Audit](https://img.shields.io/badge/SECURITY-AUDITED-f43f5e?style=for-the-badge&logo=shield)](SECURITY.md)\n[![Lighthouse Audit Asserts](https://img.shields.io/badge/Lighthouse-100%20%7C%20100%20%7C%20100%20%7C%20100-emerald?style=for-the-badge&logo=lighthouse)](https://github.com/im-ismail-ibne-ratul/portfolio/actions)\n\n[![Live Demo](https://img.shields.io/badge/🚀_LIVE_DEMO-ACTIVE_PORT-00cfc8?style=for-the-badge)](https://im-ismail-ibne-ratul.github.io/)\n[![GitHub Pages](https://img.shields.io/badge/⚡_GITHUB_PAGES-HOSTED-blue?style=for-the-badge)](https://im-ismail-ibne-ratul.github.io/)\n\n</div>\n\n---\n\n## 🛠️ THE DEPLOYMENT ARCHITECTURE\n\nThe Cyberspace OS operates under strict automated continuous deployment (CI/CD) constraints. Whenever code is merged into the default branches, GitHub Actions compiles, audits, optimizes, and publishes the static bundles instantly to CDN nodes:\n\n```\n[ LOCAL DEVELOPMENT ] ──────────► git push main ──────────► [ GITHUB ACTIONS ]\n                                                                   │\n       ┌─────────────────────────┬─────────────────────────┬───────┴─────────────────┐\n       ▼                         ▼                         ▼                         ▼\n[ lint & audit ]       [ type validation ]       [ sitemap generator ]     [ static optimization ]\n(eslint, prettier)     (npx tsc --noEmit)         (sitemap.xml config)      (minify & compress)\n       │                         │                         │                         │\n       └─────────────────────────┴─────────────────────────┴───────┬─────────────────┘\n                                                                   ▼\n                                                       [ PUBLISH TO GITHUB PAGES ]\n                                                       (Live Website Updates Instantly)\n```\n\n---\n\n## 🎮 CORE OPERATIONAL FEATURES\n\n### 1. Cyberpunk Terminal Interface\n* **Matrix Rain Canvas**: Backed by a high-frequency, responsive HTML5 canvas rendering code matrix rain.\n* **Sound Synthesizer**: Implements user-controlled multi-frequency oscillators and filters to generate retro synthesizer sounds.\n* **Interactive Command Line**: Access localized commands (`help`, `clear`, `neofetch`, `matrix`, `about`) via an interactive typing console.\n\n### 2. Administrative Control Deck\n* **Integrated CMS Panels**: Dynamically update your professional profile configuration, skills matrix, and project list directly in the secure UI.\n* **Automated Backup & State Restore**: Export your entire database, CV file, and security logs into an immutable JSON payload, and restore state instantly on any browser terminal.\n* **Brute-Force Lockouts**: Throttles admin handshake attempts, enforcing a 30-second security block after 3 unsuccessful login attempts.\n\n### 3. Secure CV & Document Manager\n* **Dual-Layer PDF Upload Validation**: Enforces strict `application/pdf` MIME parameters and 5MB size limits.\n* **Historical Version Rollbacks**: Stores up to 5 historically secure CV revisions, enabling instant restoration of previous CV versions.\n* **Real-Time Client Synchronization**: Every \"Download CV\" anchor across the application instantly reflects active version updates.\n\n### 4. SOC Security Center & Telemetry\n* **Reactive CSP Violations Hook**: Detects and logs Content-Security-Policy violations directly to the telemetry tracker.\n* **DevTools Debugging Warning**: Appends low-risk warning events when window sizes trigger browser console inspections.\n* **Local Persistent Logs**: Saves all security incidents, unhandled script rejections, and login failures into client storage.\n\n---\n\n## 💾 TECHNOLOGY STACK Matrix\n\n* **Framework Core**: [React 19](https://react.dev/) + [Vite 6](https://vite.dev/)\n* **Type System**: [TypeScript 5](https://www.typescriptlang.org/)\n* **Styling & Layout**: [Tailwind CSS v4](https://tailwindcss.com/)\n* **Motion Engine**: [Motion (formerly Framer Motion)](https://motion.dev/)\n* **Database & CMS**: [Firebase Firestore](https://firebase.google.com/)\n* **CI/CD Orchestrator**: [GitHub Actions](https://github.com/features/actions)\n* **Icons Library**: [Lucide React](https://lucide.dev/)\n\n---\n\n## 📂 REPOSITORY DIRECTORY LAYOUT\n\n```\n├── .github/\n│   ├── ISSUE_TEMPLATE/       # Structured Bug/Feature issue templates\n│   ├── workflows/            # Automatic CD deploy YAML files\n│   ├── PULL_REQUEST_TEMPLATE.md\n│   ├── dependabot.yml        # Scheduled package vulnerability checks\n│   └── FUNDING.yml\n├── assets/                   # Environment metadata settings\n├── public/                   # Static files copied to /dist during compilation\n│   ├── 404.html              # Custom SPA router page redirector\n│   ├── robots.txt            # Search engine crawlers permission set\n│   ├── sitemap.xml           # Static SEO mapping index\n│   └── manifest.webmanifest  # Progressive Web App (PWA) configuration\n├── src/\n│   ├── components/           # Sub-divided modular React views\n│   ├── lib/                  # Initialized Firebase connectors\n│   ├── types.ts              # Pinned TypeScript type definitions\n│   ├── App.tsx               # Primary interface orchestrator\n│   └── index.css             # Tailwind theme configurations\n├── package.json              # Operational scripts & dependencies\n└── tsconfig.json             # Pinned compiler options\n```\n\n---\n\n## 🚀 LOCAL DEVELOPMENT INITIALIZATION\n\nTo boot Ratul's Cybernetic OS on your local console, follow these instructions:\n\n### 1. Retrieve the Source Files\n```bash\ngit clone https://github.com/im-ismail-ibne-ratul/portfolio.git\ncd portfolio\n```\n\n### 2. Fetch Dependency Packages\n```bash\nnpm install\n```\n\n### 3. Establish Local Environment Handshake\nCopy the example environment template into `.env` and fill in your Firebase credentials:\n```bash\ncp .env.example .env\n```\n\n### 4. Boot the Development Console\n```bash\nnpm run dev\n```\nOpen [http://localhost:3000](http://localhost:3000) in your browser.\n\n---\n\n## ⚡ PERFORMANCE BENCHMARKS & LIGHTHOUSE METRICS\n\nThe portfolio is compiled using optimized tree-shaking and asset compression, aiming for maximum scores on audits:\n\n* **Performance**: `99 / 100` (Instant loading, deferred scripts, lightweight SVG icons)\n* **Accessibility**: `100 / 100` (Keyboard-accessible commands, clean ARIA labeling)\n* **Best Practices**: `100 / 100` (HTTPS redirections, clean dependencies)\n* **SEO**: `100 / 100` (Explicit metadata, robots.txt, sitemap.xml)\n\n---\n\n## 🔒 SECURITY SPECIFICATION OVERVIEW\n\nThis application operates under a hybrid static zero-trust policy.\n* **Headers Protection**: Strict Content-Security-Policy parameters mitigate unauthorized third-party scripts.\n* **Key Scoping**: Firestore access tokens are strictly isolated, and security rules inside `firestore.rules` prohibit unauthenticated data mutations.\n* **No Server-Side Leakage**: Secrets (such as GitHub personal access tokens) are handled server-side during CMS synchronization, keeping client vectors clean.\n* For comprehensive information, consult our [SECURITY.md](SECURITY.md) guidelines.\n\n---\n\n## ❓ FREQUENTLY ASKED QUESTIONS (FAQ)\n\n#### Q: How does the automatic GitHub Sync function?\nA: The admin panel connects directly to the GitHub REST API. Whenever a project is created or tagged as WIP, the system reads repo meta and structures cards accordingly in the dynamic feed.\n\n#### Q: Is my data safe with the backup restore function?\nA: Absolutely! The state backup feature is entirely client-safe. It reads localized collections, encodes them into JSON, and downloads them. Restoring writes straight into your Firestore tables after successful authorization.\n\n#### Q: How do I access the Admin Panel?\nA: Click the secure terminal button on the top-right console or append `#admin` to the URL. Enter your authorized secret coordinates to enter.\n\n---\n\n## 🗺️ EXPANSION ROADMAP\n\n* **Planned Features**: Gemini AI recruiter conversation module, custom ambient sound synthesizers, full relational database migrations.\n* Refer to [ROADMAP.md](ROADMAP.md) for detailed descriptions of upcoming development sprints.\n\n---\n\n## ⚖️ LICENSING\n\nThis project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.\n\n```\n[DEVOPS COMPILATION TERMINATED]: ALL CORES OPERATIONAL. DISPATCH COMPLETED.\n```\n",
+      "readme_parsed": {
+        "screenshots": [
+          "https://img.shields.io/github/actions/workflow/status/im-ismail-ibne-ratul/portfolio/deploy.yml?branch=main&style=for-the-badge&color=10b981&label=CI/CD%20BUILD",
+          "https://img.shields.io/badge/License-MIT-059669.svg?style=for-the-badge",
+          "https://img.shields.io/badge/SECURITY-AUDITED-f43f5e?style=for-the-badge&logo=shield",
+          "https://img.shields.io/badge/Lighthouse-100%20%7C%20100%20%7C%20100%20%7C%20100-emerald?style=for-the-badge&logo=lighthouse",
+          "https://img.shields.io/badge/🚀_LIVE_DEMO-ACTIVE_PORT-00cfc8?style=for-the-badge",
+          "https://img.shields.io/badge/⚡_GITHUB_PAGES-HOSTED-blue?style=for-the-badge",
+          "public/favicon.svg"
+        ],
+        "gifs": [],
+        "features": [
+          "",
+          "",
+          "",
+          "Matrix Rain Canvas**: Backed by a high-frequency, responsive HTML5 canvas rendering code matrix rain.",
+          "Sound Synthesizer**: Implements user-controlled multi-frequency oscillators and filters to generate retro synthesizer sounds.",
+          "Interactive Command Line**: Access localized commands (`help`, `clear`, `neofetch`, `matrix`, `about`) via an interactive typing console.",
+          "Integrated CMS Panels**: Dynamically update your professional profile configuration, skills matrix, and project list directly in the secure UI.",
+          "Automated Backup & State Restore**: Export your entire database, CV file, and security logs into an immutable JSON payload, and restore state instantly on any browser terminal."
+        ],
+        "installation": [],
+        "technologies": [
+          "Framework Core**: [React 19](https://react.dev/) + [Vite 6](https://vite.dev/)",
+          "Type System**: [TypeScript 5](https://www.typescriptlang.org/)",
+          "Styling & Layout**: [Tailwind CSS v4](https://tailwindcss.com/)",
+          "Motion Engine**: [Motion (formerly Framer Motion)](https://motion.dev/)",
+          "Database & CMS**: [Firebase Firestore](https://firebase.google.com/)",
+          "CI/CD Orchestrator**: [GitHub Actions](https://github.com/features/actions)",
+          "Icons Library**: [Lucide React](https://lucide.dev/)"
+        ],
+        "architecture": [
+          "The Cyberspace OS operates under strict automated continuous deployment (CI/CD) constraints. Whenever code is merged into the default branches, GitHub Actions compiles, audits, optimizes, and publishes the static bundles instantly to CDN nodes:",
+          "```",
+          "[ LOCAL DEVELOPMENT ] ──────────► git push main ──────────► [ GITHUB ACTIONS ]",
+          "│",
+          "┌─────────────────────────┬─────────────────────────┬───────┴─────────────────┐",
+          "▼                         ▼                         ▼                         ▼",
+          "[ lint & audit ]       [ type validation ]       [ sitemap generator ]     [ static optimization ]",
+          "(eslint, prettier)     (npx tsc --noEmit)         (sitemap.xml config)      (minify & compress)",
+          "│                         │                         │                         │",
+          "└─────────────────────────┴─────────────────────────┴───────┬─────────────────┘",
+          "▼",
+          "[ PUBLISH TO GITHUB PAGES ]",
+          "(Live Website Updates Instantly)",
+          "```"
+        ],
+        "roadmap": [
+          "Planned Features**: Gemini AI recruiter conversation module, custom ambient sound synthesizers, full relational database migrations.",
+          "Refer to [ROADMAP.md](ROADMAP.md) for detailed descriptions of upcoming development sprints."
+        ],
+        "todoList": [],
+        "changelog": []
+      }
+    },
+    {
+      "id": 1281716598,
+      "name": "Nexux-Mesh-",
+      "full_name": "iir20/Nexux-Mesh-",
+      "description": "a office based social media type things ",
+      "html_url": "https://github.com/iir20/Nexux-Mesh-",
+      "homepage": "",
+      "language": "Kotlin",
+      "languages": [
+        "Kotlin"
+      ],
+      "topics": [],
+      "license": {
+        "name": "Other",
+        "spdx_id": "NOASSERTION"
+      },
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0,
+      "open_issues_count": 12,
+      "pushed_at": "2026-06-27T09:52:48Z",
+      "created_at": "2026-06-26T21:07:59Z",
+      "size": 1232,
+      "visibility": "public",
+      "default_branch": "main",
+      "clone_url": "https://github.com/iir20/Nexux-Mesh-.git",
+      "pinned": false,
+      "wip": false,
+      "status": "Active",
+      "latest_commit": {
+        "message": "build: update Kotlin compiler execution strategy\n\nRevert the in-process execution strategy to default to resolve classloading conflicts with KSP.",
+        "date": "2026-06-27T09:52:48Z",
+        "author": "iir20"
+      },
+      "latest_release": null,
+      "readme": "# NEXUS MESH (v7.0) — Off-Grid Decentralized Mesh Networking Protocol\n\n[![Build Status](https://github.com/nexus-mesh/nexus-mesh-android/actions/workflows/android.yml/badge.svg)](https://github.com/nexus-mesh/nexus-mesh-android/actions/workflows/android.yml)\n[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)\n[![Platform: Android](https://img.shields.io/badge/Platform-Android-green.svg)](SUPPORTED_DEVICES.md)\n[![Encryption: AES-GCM-256 / ECDH](https://img.shields.io/badge/Security-ZKP%20%7C%20ECDH%20%7C%20AES--GCM-brightgreen)](CRYPTOGRAPHY.md)\n\nNEXUS MESH is a resilient, fully decentralized, peer-to-peer (P2P) ad-hoc mesh networking protocol and Android application designed for high-density, off-grid environments where cellular and internet infrastructure are unavailable. It orchestrates zero-infrastructure communication utilizing multi-hop Bluetooth Low Energy (BLE) routing, Wi-Fi Direct (P2P) high-throughput carrier links, and cryptographic identity derivation.\n\n---\n\n## Project Overview\n\nIn emergencies, crowded music festivals, remote research expeditions, or areas lacking cellular service, current mobile devices become isolated islands. NEXUS MESH bridges this gap. By turning every participating Android device into a routing node, it constructs a dynamic, self-healing mesh topology. \n\nUnlike traditional centralized services, NEXUS MESH requires **no central servers, cellular towers, or internet handshakes**.\n\n---\n\n## Key Features\n\n- **Dynamic Multi-Hop Routing**: Self-healing pathfinding over BLE advertisement payloads and active GATT connections.\n- **Hybrid Physical Carriers**: Orchestrated BLE for low-latency control-plane beaconing paired with high-bandwidth Wi-Fi Direct for data-plane bulk transfers (firmware, media, datasets).\n- **ZKP Identity Derivation**: Cryptographic keypairs generated directly from offline 12-word recovery seed phrases, featuring zero-knowledge authentication challenges.\n- **Zero-Trust Security**: Point-to-point encryption utilizing ECDH key exchanges and AES-GCM-256 envelope security.\n- **Offline Social Feed & Stories**: Dispersed transient social posts (ephemeral Mesh Stories with 24-hour expiry) backed by a fully local, thread-safe Room SQLite database.\n- **Smart Energy Governor**: Battery-aware telemetry that dynamically disables message-relaying on low-battery nodes (<20%) or forces high-throughput relay capabilities during active charging.\n\n---\n\n## Supported Android Versions\n\n- **Minimum SDK**: API Level 26 (Android 8.0 Oreo) - Required for stable BLE advertising and BluetoothGattServer APIs.\n- **Target SDK**: API Level 34 (Android 14) - Fully compliant with precise background execution policies and Bluetooth runtime permissions.\n\n---\n\n## Current Development Status\n\n- **Core Protocol**: Implemented & Verified (V2.1 specification).\n- **Local Persistence Layer**: Fully Implemented (Room SQLite Engine).\n- **Wi-Fi Direct Transport**: Experimental/Validated under simulated high-density environments.\n- **Zero-Knowledge Challenges**: Planned for integration in v7.1.\n\n---\n\n## Architecture Diagram\n\n```mermaid\ngraph TD\n    A[Core UI - Jetpack Compose] --> B[MeshViewModel]\n    B --> C[Repository / Room Database]\n    B --> D[BLE Controller]\n    B --> E[Wi-Fi Direct Controller]\n    D --> F[Bluetooth Low Energy Physical Layer]\n    E --> G[Wi-Fi Direct Physical Layer]\n    C --> H[(Local SQLite Database)]\n    F <--> I[Remote Peer Node]\n    G <--> I\n```\n\n---\n\n## Technology Stack\n\n- **UI Framework**: Jetpack Compose (Material Design 3 Theme)\n- **Programming Language**: Kotlin (Coroutines, Flow, StateFlow)\n- **Local Database**: Android Room (with SQLite, KSP compiler)\n- **Core Networking**: Android Bluetooth LE API & Wi-Fi P2P (Wi-Fi Direct) Framework\n- **Cryptography**: Tink / Android Keystore System\n- **Build System**: Gradle Kotlin DSL\n\n---\n\n## Quick Start\n\n### Installation\n\nClone the repository and import the project into Android Studio:\n\n```bash\ngit clone https://github.com/nexus-mesh/nexus-mesh-android.git\n```\n\n### Permissions Required\n\nNEXUS MESH requires explicit permission grants to enable offline peer discovery:\n- `android.permission.BLUETOOTH_SCAN`\n- `android.permission.BLUETOOTH_ADVERTISE`\n- `android.permission.BLUETOOTH_CONNECT`\n- `android.permission.ACCESS_FINE_LOCATION`\n- `android.permission.NEARBY_WIFI_DEVICES` (for Android 13+)\n\n---\n\n## Building from Source\n\nTo compile the application debug build, execute the following Gradle task:\n\n```bash\ngradle assembleDebug\n```\n\n---\n\n## Running Tests\n\nTo run local JVM tests containing simulated peer topologies, execute:\n\n```bash\ngradle :app:testDebugUnitTest\n```\n\n---\n\n## Developer Documentation\n\nRefer to the complete offline-first engineering guides in the root directory:\n- [Developer Quick Start](README_DEV.md)\n- [Protocol Specification](NETWORK_PROTOCOL.md)\n- [Cryptographic Specifications](CRYPTOGRAPHY.md)\n- [Database Engine Guide](DATABASE.md)\n\n---\n\n## Security Model\n\nNEXUS MESH assumes a completely adversarial network environment. Every packet is signed, time-stamped, and verified. Key highlights include:\n1. **Dynamic MAC Randomization** to prevent physical tracking of hardware.\n2. **Ephemeral ECDH session keys** to prevent global passive decryption.\n3. **ZKP Reputation Validation** to mitigate Sybil and Eclipse routing attacks.\n\n---\n\n## Known Limitations\n\n- High RF congestion (cluttered 2.4 GHz spectrum) degrades BLE packet delivery.\n- Background execution limits on non-stock Android OEMs (Samsung, Xiaomi) may aggressively sleep GATT connections.\n- See [Known Limitations](KNOWN_LIMITATIONS.md) for remediation configurations.\n\n---\n\n## Roadmap\n\n- **v7.1**: Real-world hardware test harness validations.\n- **v7.2**: Interoperable iOS core client via Swift CoreBluetooth wrapper.\n- **v8.0**: Satellite backup transit gateways.\n\n---\n\n## License\n\nThis project is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.\n\n---\n\n## FAQ\n\nPlease refer to the comprehensive [README_FAQ.md](README_FAQ.md) for troubleshooting, battery utilization optimization questions, and hardware routing quirks.\n\n---\n\n## Acknowledgements\n\n- Google AndroidX Teams (Jetpack Compose, Room)\n- LibP2P Peer-to-Peer Protocol Consortium\n- Signal Foundation (Double Ratchet concepts)\n- Matrix.org (Decentralized state replication)",
+      "readme_parsed": {
+        "screenshots": [
+          "https://github.com/nexus-mesh/nexus-mesh-android/actions/workflows/android.yml/badge.svg",
+          "https://img.shields.io/badge/License-Apache%202.0-blue.svg",
+          "https://img.shields.io/badge/Platform-Android-green.svg",
+          "https://img.shields.io/badge/Security-ZKP%20%7C%20ECDH%20%7C%20AES--GCM-brightgreen"
+        ],
+        "gifs": [],
+        "features": [
+          "Dynamic Multi-Hop Routing**: Self-healing pathfinding over BLE advertisement payloads and active GATT connections.",
+          "Hybrid Physical Carriers**: Orchestrated BLE for low-latency control-plane beaconing paired with high-bandwidth Wi-Fi Direct for data-plane bulk transfers (firmware, media, datasets).",
+          "ZKP Identity Derivation**: Cryptographic keypairs generated directly from offline 12-word recovery seed phrases, featuring zero-knowledge authentication challenges.",
+          "Zero-Trust Security**: Point-to-point encryption utilizing ECDH key exchanges and AES-GCM-256 envelope security.",
+          "Offline Social Feed & Stories**: Dispersed transient social posts (ephemeral Mesh Stories with 24-hour expiry) backed by a fully local, thread-safe Room SQLite database.",
+          "Smart Energy Governor**: Battery-aware telemetry that dynamically disables message-relaying on low-battery nodes (<20%) or forces high-throughput relay capabilities during active charging."
+        ],
+        "installation": [
+          "Clone the repository and import the project into Android Studio:",
+          "```bash",
+          "git clone https://github.com/nexus-mesh/nexus-mesh-android.git",
+          "```"
+        ],
+        "technologies": [
+          "UI Framework**: Jetpack Compose (Material Design 3 Theme)",
+          "Programming Language**: Kotlin (Coroutines, Flow, StateFlow)",
+          "Local Database**: Android Room (with SQLite, KSP compiler)",
+          "Core Networking**: Android Bluetooth LE API & Wi-Fi P2P (Wi-Fi Direct) Framework",
+          "Cryptography**: Tink / Android Keystore System",
+          "Build System**: Gradle Kotlin DSL"
+        ],
+        "architecture": [
+          "```mermaid",
+          "graph TD",
+          "A[Core UI - Jetpack Compose] --> B[MeshViewModel]",
+          "B --> C[Repository / Room Database]",
+          "B --> D[BLE Controller]",
+          "B --> E[Wi-Fi Direct Controller]",
+          "D --> F[Bluetooth Low Energy Physical Layer]",
+          "E --> G[Wi-Fi Direct Physical Layer]",
+          "C --> H[(Local SQLite Database)]",
+          "F <--> I[Remote Peer Node]",
+          "G <--> I",
+          "```"
+        ],
+        "roadmap": [
+          "v7.1**: Real-world hardware test harness validations.",
+          "v7.2**: Interoperable iOS core client via Swift CoreBluetooth wrapper.",
+          "v8.0**: Satellite backup transit gateways."
+        ],
+        "todoList": [],
+        "changelog": []
+      }
+    },
+    {
+      "id": 1237171920,
+      "name": "MINILAM-A-MUSIC-PLAYER-NOTHING-OS-INSPIRED_2026",
+      "full_name": "iir20/MINILAM-A-MUSIC-PLAYER-NOTHING-OS-INSPIRED_2026",
+      "description": "a music player ",
+      "html_url": "https://github.com/iir20/MINILAM-A-MUSIC-PLAYER-NOTHING-OS-INSPIRED_2026",
+      "homepage": "",
+      "language": "TypeScript",
+      "languages": [
+        "TypeScript",
+        "Kotlin",
+        "HTML",
+        "CSS",
+        "Java"
+      ],
+      "topics": [],
+      "license": {
+        "name": "MIT License",
+        "spdx_id": "MIT"
+      },
+      "stargazers_count": 1,
+      "forks_count": 0,
+      "watchers_count": 1,
+      "open_issues_count": 0,
+      "pushed_at": "2026-05-13T20:36:09Z",
+      "created_at": "2026-05-13T00:16:13Z",
+      "size": 1314,
+      "visibility": "public",
+      "default_branch": "main",
+      "clone_url": "https://github.com/iir20/MINILAM-A-MUSIC-PLAYER-NOTHING-OS-INSPIRED_2026.git",
+      "pinned": true,
+      "wip": false,
+      "status": "Active",
+      "latest_commit": {
+        "message": "Update README.md",
+        "date": "2026-05-13T20:36:09Z",
+        "author": "iir20"
+      },
+      "latest_release": {
+        "tag_name": "apk",
+        "name": "MINILAM  APK For Android (beta)",
+        "published_at": "2026-05-13T01:48:58Z",
+        "html_url": "https://github.com/iir20/MINILAM-A-MUSIC-PLAYER-NOTHING-OS-INSPIRED_2026/releases/tag/apk",
+        "zipball_url": "https://api.github.com/repos/iir20/MINILAM-A-MUSIC-PLAYER-NOTHING-OS-INSPIRED_2026/zipball/apk",
+        "body": "Unzip Install Stay Minimalist \r\n\r\n[minilam-debug-apk (10).zip](https://github.com/user-attachments/files/27720516/minilam-debug-apk.10.zip)\r\n\r\n\r\n",
+        "assets": []
+      },
+      "readme": "<img width=\"1200\" height=\"595\" alt=\"1000088179\" src=\"https://github.com/user-attachments/assets/408f6182-8630-4a96-a371-e539cd738b3f\" />\n# 🚀 MiniLam OS — The Cyberpunk Audio Ecosystem\n\nMiniLam OS is an adaptive, cyberpunk-native audio operating system inspired by Nothing OS, futuristic dot-matrix hardware, and OLED minimalism. It transforms your music listening experience into an immersive interactive environment.\n\n## 🌌 The Evolutionary Vision\n\nMiniLam OS is no longer just a music player. It is a living UI that reacts to your music, your device, and your environment.\n\n### 🎨 Adaptive Material You Cyberpunk Engine\n- **Dynamic Theme Fusion**: Extracts Material You palette from your wallpaper and converts it into high-contrast cyberpunk tones.\n- **Accent Intelligence**: Dynamic color shifts based on music mood (Red for Energetic, Blue for Ambient, Purple for Synthwave).\n- **Smart Night Mode**: UI softens and contrast reduces automatically after dark.\n\n### 🤖 AI-Reactive Widget System\n- **Context-Aware Surfaces**: Widgets that react to music BPM, energy, and frequency intensity.\n- **Environmental Reactivity**: Detects night-time and device idle states to shift into ambient modes.\n- **Battery Saver Intelligence**: Automatically enters low-power rendering when battery is low.\n\n### 🛡️ OLED Burn Protection System\n- **Pixel Shifting**: Subtle, invisible UI shifts to prevent static burn.\n- **Adaptive Dimming**: Intelligent brightness reduction for static elements.\n- **Micro-Motion Engine**: Clock and indicators feature slight movement to preserve OLED health.\n\n### 🔊 Native Glyph Engine\n- **Rhythm Reactive Lighting**: Visual pulses synchronized with kick drums and bass transients.\n- **Dot Matrix Spectrum**: Terminal-inspired diagnostic visualizers optimized for performance.\n- **Vinyl Reactive Ring**: Virtual stylus and disc movement mapped to audio energy.\n\n## 🛠️ Tech Stack & Android Integration\n\nMiniLam is built for the modern mobile ecosystem:\n- **Frontend**: React 18 / Vite / TypeScript\n- **Animations**: Framer Motion (`motion/react`)\n- **State**: Zustand\n- **Native Widgets**: Jetpack Glance (Android)\n- **Media Engine**: Media3 Session / ExoPlayer\n- **UI Logic**: Kotlin 2.1 / Material You APIs\n\n## 🚀 Getting Started\n\n1. **Install Dependencies**:\n   ```bash\n   npm install\n   ```\n2. **Launch Preview**:\n   ```bash\n   npm run dev\n   ```\n\n## 🏁 Philosophy\n\n> \"Music should not only be heard. It should transform the operating system itself.\"\n\n---\n\n## 📜 License\n\nThis project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.\n",
+      "readme_parsed": {
+        "screenshots": [
+          "https://github.com/user-attachments/assets/408f6182-8630-4a96-a371-e539cd738b3f"
+        ],
+        "gifs": [],
+        "features": [
+          "Dynamic Theme Fusion**: Extracts Material You palette from your wallpaper and converts it into high-contrast cyberpunk tones.",
+          "Accent Intelligence**: Dynamic color shifts based on music mood (Red for Energetic, Blue for Ambient, Purple for Synthwave).",
+          "Smart Night Mode**: UI softens and contrast reduces automatically after dark.",
+          "Context-Aware Surfaces**: Widgets that react to music BPM, energy, and frequency intensity.",
+          "Environmental Reactivity**: Detects night-time and device idle states to shift into ambient modes.",
+          "Battery Saver Intelligence**: Automatically enters low-power rendering when battery is low.",
+          "Pixel Shifting**: Subtle, invisible UI shifts to prevent static burn.",
+          "Adaptive Dimming**: Intelligent brightness reduction for static elements."
+        ],
+        "installation": [],
+        "technologies": [
+          "MiniLam is built for the modern mobile ecosystem:",
+          "Frontend**: React 18 / Vite / TypeScript",
+          "Animations**: Framer Motion (`motion/react`)",
+          "State**: Zustand",
+          "Native Widgets**: Jetpack Glance (Android)",
+          "Media Engine**: Media3 Session / ExoPlayer",
+          "UI Logic**: Kotlin 2.1 / Material You APIs"
+        ],
+        "architecture": [],
+        "roadmap": [],
+        "todoList": [],
+        "changelog": []
+      }
+    },
+    {
+      "id": 1257301133,
+      "name": "my-personal-portfolio-website-",
+      "full_name": "iir20/my-personal-portfolio-website-",
+      "description": "my personal portfolio website ",
+      "html_url": "https://github.com/iir20/my-personal-portfolio-website-",
+      "homepage": "https://iir20.github.io/my-personal-portfolio-website-/",
+      "language": "TypeScript",
+      "languages": [
+        "TypeScript",
+        "CSS",
+        "Dockerfile",
+        "HTML"
+      ],
+      "topics": [],
+      "license": {
+        "name": "MIT License",
+        "spdx_id": "MIT"
+      },
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0,
+      "open_issues_count": 0,
+      "pushed_at": "2026-06-02T15:34:59Z",
+      "created_at": "2026-06-02T14:49:26Z",
+      "size": 365,
+      "visibility": "public",
+      "default_branch": "main",
+      "clone_url": "https://github.com/iir20/my-personal-portfolio-website-.git",
+      "pinned": false,
+      "wip": false,
+      "status": "Active",
+      "latest_commit": {
+        "message": "build: set base path to relative for deployment\n\nConfigure Vite to use relative paths to ensure assets load correctly when deployed in subdirectories.",
+        "date": "2026-06-02T15:26:05Z",
+        "author": "iir20"
+      },
+      "latest_release": {
+        "tag_name": "link",
+        "name": "Website link 🖇️",
+        "published_at": "2026-06-02T15:34:59Z",
+        "html_url": "https://github.com/iir20/my-personal-portfolio-website-/releases/tag/link",
+        "zipball_url": "https://api.github.com/repos/iir20/my-personal-portfolio-website-/zipball/link",
+        "body": "https://iir20.github.io/my-personal-portfolio-website-/",
+        "assets": []
+      },
+      "readme": "# 🌐 ISMAIL IBNE RATUL — CYBERSPACE DIGITAL PORTFOLIO OS\n> **[DEVOPS MODULE COMPILING...] STATUS: PRODUCTION MODE ACTIVATED**\n\n[![Automated Build & Deploy Status](https://img.shields.io/github/actions/workflow/status/ismail-ibne-ratul/portfolio/deploy.yml?branch=main&style=flat-square&color=emerald&label=CI/CD%20BUILD)](https://github.com/im-ismail-ibne-ratul/portfolio/actions)\n[![Firebase Cloud Host Synchronizer](https://img.shields.io/github/actions/workflow/status/ismail-ibne-ratul/portfolio/firebase-hosting.yml?branch=main&style=flat-square&color=00cfc8&label=FIREBASE%20HOST)](https://github.com/im-ismail-ibne-ratul/portfolio/actions)\n[![Security Scan Integrity Audit](https://img.shields.io/github/actions/workflow/status/ismail-ibne-ratul/portfolio/security-scan.yml?branch=main&style=flat-square&color=f43f5e&label=FIREWALL%20IPX)](https://github.com/im-ismail-ibne-ratul/portfolio/actions)\n[![Lighthouse Audit Asserts](https://img.shields.io/badge/Lighthouse_Assets-98%20%7C%20100%20%7C%20100%20%7C%20100-emerald?style=flat-square&logo=lighthouse)](https://github.com/im-ismail-ibne-ratul/portfolio/actions)\n[![MIME Security Checked](https://img.shields.io/badge/PDF_Envelopes-MIME_ONLY-orange?style=flat-square)](https://github.com/im-ismail-ibne-ratul/portfolio)\n\n---\n\n## 🛠️ THE SYSTEM ARCHITECTURE\n\nWelcome to the fully automated, production-grade cloud deployment ecosystem of the **Ismail Ibne Ratul Cyberpunk Digital Operating System Portfolio**. This repository is configured to deploy client-side assets and cloud-managed Firestore databases seamlessly with automatic cache purges, SEO optimizations, and secure administrative modules.\n\n```\n       [ LOCAL HOST ] ---------> PUSH TO MAIN ---------> [ GITHUB ACTIONS ]\n                                                                 |\n            +------------------------+---------------------------+------------------------+\n            |                        |                           |                        |\n     [ lint & test ]        [ security-scan.yml ]    [ lighthouse-audit.yml ]       [ deploy.yml ]\n     (tsc, eslint)          (MIME, dependencies)     (performance score audits)    (Docker compile)\n            |                        |                           |                        |\n            V                        V                           V                        V\n   [ CI/CD VERIFIED ]       [ SECURITY SANITIZED ]     [ METRICS ASSERTED ]      [ NEW DEPLOY LIVE ]\n                                                                                          |\n                                      +---------------------------------------------------+\n                                      |\n                                      V\n                        [ FIREBASE HOSTING SYNCS CDN ]\n```\n\n---\n\n## 📂 PROFESSIONAL CI/CD AUTOMATION WORKFLOWS\n\nInside `.github/workflows/`, five interconnected pipeline engines manage compilation, security scans, and deployment:\n\n| Pipeline Engine | Workflow Descriptor | Trigger Event | Operational Output |\n| :--- | :--- | :--- | :--- |\n| **`deploy.yml`** | Production build & self-host deployer | Push to `main`/`master` | Builds bundle using Vite/Esbuild, runs linters, and compiles a containerized image standardizing configurations. |\n| **`firebase-hosting.yml`** | Cloud sync & CDN Purge system | Push to `main`/`master` | Deploys optimized static bundle directly into Firebase Hosting, activating Brotli compression. |\n| **`security-scan.yml`** | Vulnerability scanning and SAST sanitization | Push and Pull Requests | Scans packages for CVE dependencies and validates strict schema invariants. |\n| **`lighthouse-audit.yml`** | Performance metrics audit | Push to all branches | Evaluates and asserts Lighthouse scores to guarantee instant load times matching high-fidelity UI benchmarks. |\n| **`release.yml`** | Packaging tag manager | Tag pushes (`v*`) | Compiles and packages dynamic source files into self-contained zip assets. |\n\n---\n\n## 🔒 SYSTEM SECRETS CONSTELLATIONS\n\nTo establish automated deployment integration, configure these secrets within your GitHub repository under **Settings > Secrets and Variables > Actions > Repository secrets:**\n\n1. `FIREBASE_SERVICE_ACCOUNT_IBNE_RATUL_CYBER`\n   - **Type**: Base64 JSON Service Account Token.\n   - **Description**: Authorized credential to connect actions directly to your Firebase Hosting instances.\n   - **Generation**: Created from GCP Service Accounts console with the `Firebase Hosting Admin` role.\n2. `GCP_PROJECT_ID`\n   - **Type**: ASCII String.\n   - **Description**: The Identifier ID of your GCP Cloud project (defaults gracefully to `ismail-ibne-ratul` if unset).\n3. `GITHUB_TOKEN`\n   - **Type**: Automatic token (provided by GitHub at runtime).\n   - **Description**: Standard repository checkout token used for static assets publishing.\n\n---\n\n## 🧠 ADMINISTRATIVE GATEWAY & CV STORAGE INTEGRATION\n\nThe portal is augmented with an advanced **ADMIN DECK** featuring high-integrity cloud storage capabilities:\n\n* **Dynamic CV Upload System**: Supports strict MIME security validation (`application/pdf`) and files limit rules cap of 5.0 MB to safeguard core operations.\n* **Animated Cyber Terminal**: Watch live streaming progress holograms and telemetry bars compiling binary packets directly into persistent Firestore clusters.\n* **Rollback Backup Nodes**: Tracks a localized history roster of up to 5 historical CV revisions with easy rollback support.\n* **Automated Client Sync**: After uploading, every `Download CV` anchor across coordinates updates instantly with real-time PDF version metrics.\n\n---\n\n## ⚡ SECURITY ENFORCEMENTS & COGNITIVE CONTROLS\n\nThe platform operates under Zero-Trust constraints defined within `security_spec.md` and `firestore.rules`:\n- **CSP & Strict Protection**: Secured with custom HTTP headers preventing Frame isolation and scripting injection scripts.\n- **Intrusion Tracker Simulator**: Displays a real-time reactive streaming activity dashboard tracking spoofed payloads, unmapped trajectories, and blocked SQLi probes.\n- **Emergency Interlock System**: Toggle core operations into Maintenance and Locked Modes immediately from the Admin Deck to block and shield connections of the portfolio system.\n\n---\n\n```\n[DEVOPS OPERATIONAL LOG]: ALL CORES BALANCED. DIGITAL HEADQUARTERS IS LIVE.\n```\n",
+      "readme_parsed": {
+        "screenshots": [
+          "https://img.shields.io/github/actions/workflow/status/ismail-ibne-ratul/portfolio/deploy.yml?branch=main&style=flat-square&color=emerald&label=CI/CD%20BUILD",
+          "https://img.shields.io/github/actions/workflow/status/ismail-ibne-ratul/portfolio/firebase-hosting.yml?branch=main&style=flat-square&color=00cfc8&label=FIREBASE%20HOST",
+          "https://img.shields.io/github/actions/workflow/status/ismail-ibne-ratul/portfolio/security-scan.yml?branch=main&style=flat-square&color=f43f5e&label=FIREWALL%20IPX",
+          "https://img.shields.io/badge/Lighthouse_Assets-98%20%7C%20100%20%7C%20100%20%7C%20100-emerald?style=flat-square&logo=lighthouse",
+          "https://img.shields.io/badge/PDF_Envelopes-MIME_ONLY-orange?style=flat-square"
+        ],
+        "gifs": [],
+        "features": [
+          "",
+          "Type**: Base64 JSON Service Account Token.",
+          "Description**: Authorized credential to connect actions directly to your Firebase Hosting instances.",
+          "Generation**: Created from GCP Service Accounts console with the `Firebase Hosting Admin` role.",
+          "Type**: ASCII String.",
+          "Description**: The Identifier ID of your GCP Cloud project (defaults gracefully to `ismail-ibne-ratul` if unset)."
+        ],
+        "installation": [],
+        "technologies": [],
+        "architecture": [
+          "Welcome to the fully automated, production-grade cloud deployment ecosystem of the **Ismail Ibne Ratul Cyberpunk Digital Operating System Portfolio**. This repository is configured to deploy client-side assets and cloud-managed Firestore databases seamlessly with automatic cache purges, SEO optimizations, and secure administrative modules.",
+          "```",
+          "[ LOCAL HOST ] ---------> PUSH TO MAIN ---------> [ GITHUB ACTIONS ]",
+          "|",
+          "+------------------------+---------------------------+------------------------+",
+          "|                        |                           |                        |",
+          "[ lint & test ]        [ security-scan.yml ]    [ lighthouse-audit.yml ]       [ deploy.yml ]",
+          "(tsc, eslint)          (MIME, dependencies)     (performance score audits)    (Docker compile)",
+          "|                        |                           |                        |",
+          "V                        V                           V                        V",
+          "[ CI/CD VERIFIED ]       [ SECURITY SANITIZED ]     [ METRICS ASSERTED ]      [ NEW DEPLOY LIVE ]",
+          "|",
+          "+---------------------------------------------------+",
+          "|",
+          "V",
+          "[ FIREBASE HOSTING SYNCS CDN ]",
+          "```"
+        ],
+        "roadmap": [],
+        "todoList": [],
+        "changelog": []
+      }
+    },
+    {
+      "id": 1252217843,
+      "name": "Rent-Truth-Bd-",
+      "full_name": "iir20/Rent-Truth-Bd-",
+      "description": "A room, office ,home, commercial office rental system for bangladehi people ",
+      "html_url": "https://github.com/iir20/Rent-Truth-Bd-",
+      "homepage": "",
+      "language": "Kotlin",
+      "languages": [
+        "Kotlin",
+        "TypeScript",
+        "PLpgSQL",
+        "JavaScript",
+        "Dockerfile"
+      ],
+      "topics": [],
+      "license": {
+        "name": "MIT License",
+        "spdx_id": "MIT"
+      },
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0,
+      "open_issues_count": 0,
+      "pushed_at": "2026-05-31T08:30:51Z",
+      "created_at": "2026-05-28T09:55:11Z",
+      "size": 85794,
+      "visibility": "public",
+      "default_branch": "main",
+      "clone_url": "https://github.com/iir20/Rent-Truth-Bd-.git",
+      "pinned": false,
+      "wip": false,
+      "status": "Active",
+      "latest_commit": {
+        "message": "feat(data): implement user accounts and legal modules\n\nAdd Room database entities and DAO support for UserAccount, SmartRentalAgreement, and AuthorizedRating. Update repository and database schema version to facilitate persistent user profiles and agreement tracking.",
+        "date": "2026-05-31T08:30:51Z",
+        "author": "iir20"
+      },
+      "latest_release": {
+        "tag_name": "apk",
+        "name": "Rent-Truth-BD-Production-Release-APK",
+        "published_at": "2026-05-29T14:43:58Z",
+        "html_url": "https://github.com/iir20/Rent-Truth-Bd-/releases/tag/apk",
+        "zipball_url": "https://api.github.com/repos/iir20/Rent-Truth-Bd-/zipball/apk",
+        "body": "",
+        "assets": []
+      },
+      "readme": "# Rent Truth BD — Verified Rental Ecosystem for Bangladesh 🛡️🇧🇩\n\nRent Truth BD is a production-ready, highly secure, scalable, and decentralized digital property and tenant operating workspace designed for Bangladesh's real estate ecosystem. It solves long-standing challenges in the local market, including broker scams, fake home listings, hidden utilities fees, tenant harassment, tax evasion, and lack of verified landlord-tenant registries.\n\n---\n\n## 🏗️ Core Ecosystem Modules\n\n### 1. 🏡 Landlord Digital Operations Workspace\nLandlords are equipped with a complete property management console that archives historical tenancy, tracks monthly rent collection schedules, and preserves legal compliance logs:\n- **Ecosystem Registry**: Tracks active renter records, historical tenant files, and lease files permanently. Archival files remain secure and accessible even after contract termination.\n- **Verification Logs**: Manages ownership certification metadata, holding tax validation IDs, and corporate titles.\n- **Complaint Database**: Logs resolved/pending neighborhood feedback to maintain transparent landlord behavior ratings.\n- **Broker Delegation Monitor**: Connects listed properties with licensed, monitored broker IDs.\n\n### 2. 👤 Tenant Digital Identity (KYC Shield)\nEvery citizen renter receives a permanent digital lease passport:\n- **Editable Identity Keys**: Manage professional statuses, institution/company tags, student badges, and verified emergency contacts.\n- **Multi-Document Vault**: Uploads and tracks state-recognized document uploads (NID, Smart NID, Birth Certificates, Passports, Driving Licenses, Student IDs, and Utility Bills).\n- **OCR & Expiry Engine**: Includes version-tracked submissions, document safety scans, and active expiry dates.\n- **Trust Scores**: Calculates a dynamic score ranging from 0–100 based on historic payment discipline, noise reports, and caretaking feedback.\n\n### 3. 💼 Broker Commission, Mapping & Control Hub\nRestricts broker monopoly and forces commission caps under Government Rental Guidelines:\n- **Broker-Owner Partnership Routing**: Verifies listing authorization directly with the landlord.\n- **Commission Auto-Splitting Setup**: Allocates residential and commercial deal commissions (e.g., 50/50 owner-broker splits or localized percentages).\n- **Commercial Office Rentals Workflow**: Fully supports workspace scaling, corporate lease deeds, and customizable office split logs.\n- **Badging & Reputation**: Displays verified licenses and verified scam resolution ratings.\n\n### 4. 💳 Subscription & PAYMENT System (Secure Ledger)\nA hybrid billing platform ensuring direct and traceable capital flows in BDT:\n- **Role Restrictions**: Subscriptions are restricted to **Owners** and **Brokers** only (Tenants and general users enjoy free core access).\n- **Manual Mobile Money Integration**: Supports audited manual transfers using **bKash**, **Nagad**, **Rocket**, and **Direct Bank Transfers** with screenshot uploads and Unique Transaction IDs.\n- **Manual Review Flow**: Subscriptions activate automatically only after an administrator reviews the screenshot and transaction ID inside the Admin control desk.\n- **Multi-State Lifecycle**: Synchronizes payment states through: `Pending` ➔ `Approved` ➔ `Rejected` ➔ `Expired` ➔ `Refunded`.\n\n### 5. 🤖 Gemini AI Moderate & Advisor Engine\nIntegrated with state-of-the-art Generative AI for automated scam scanning and personalized, context-aware rental advice:\n- **AI Listing Audits**: Flags suspicious rental pricing (under market average), fake coordinates, or recycle internet stock image footprints.\n- **Interactive Room Advisor**: Conversational guidance tailored to transport budgets, safety checks, and landlord negotiation tactics.\n\n---\n\n## ⚡ Abstraction Blueprints for Automated Financial Scale\nTo prepare Rent Truth BD for national scaling, pre-configured architectural contracts are defined for future automated integrations:\n- `PaymentGatewayIntegrator`: Direct billing API integrations with **SSLCommerz**, **Shurjopay**, or **bKash PG**.\n- `SubscriptionScheduler`: Background workers managing automatic premium plan renewals.\n- `AutomatedInvoiceGenerator`: Generates cryptographic PDF billing and digital smart receipts.\n- `FinancialLedgerManager`: Double-entry accounting system managing platform commission splits.\n\n---\n\n## 🚀 Rapid Development & Tech Stack\n- **Framework**: Jetpack Compose (Modern visual component stack)\n- **Language**: Kotlin \n- **Database**: Room (Local SQLite verification store & transaction logs)\n- **AI Core**: Gemini AI SDK wrapper (Server-side API keys secure injections)\n- **Local Unit Verification**: Robolectric Visual & Screenshot Testing\n\n---\n\n## 📜 Repository Documentation Directories\nFor specialized operational guidance, refer to these root deployment resources:\n1. `DEPLOYMENT.md` — Complete production server hosting steps (Docker, Nginx, PM2, AWS, Atlas).\n2. `ENVIRONMENT_SETUP.md` — Local workspace compilation guides and secret key variables.\n3. `DATABASE_SCHEMA.md` — SQLite table entities, property schema mappings, and DAO interface.\n4. `ARCHITECTURE.md` — Deep MVVM block diagrams, clean architecture modules, and sync states.\n5. `API_DOCUMENTATION.md` — Backend endpoints spec sheets, JWT permissions, and websocket contracts.\n6. `CHANGELOG.md` — Complete development histories, version rollouts, and upgrade paths.\n7. `SECURITY.md` — Encryption keys management, JWT token rotation mechanics, and malware scanning rules.\n8. `CONTRIBUTING.md` — Team development standards, PR guidelines, and code quality formats.\n9. `CODE_OF_CONDUCT.md` — Professional contributor behavior standards.\n10. `LICENSE` — Software distribution terms and compliance keys.\n",
+      "readme_parsed": {
+        "screenshots": [],
+        "gifs": [],
+        "features": [
+          "",
+          "Ecosystem Registry**: Tracks active renter records, historical tenant files, and lease files permanently. Archival files remain secure and accessible even after contract termination.",
+          "Verification Logs**: Manages ownership certification metadata, holding tax validation IDs, and corporate titles.",
+          "Complaint Database**: Logs resolved/pending neighborhood feedback to maintain transparent landlord behavior ratings.",
+          "Broker Delegation Monitor**: Connects listed properties with licensed, monitored broker IDs.",
+          "Editable Identity Keys**: Manage professional statuses, institution/company tags, student badges, and verified emergency contacts.",
+          "Multi-Document Vault**: Uploads and tracks state-recognized document uploads (NID, Smart NID, Birth Certificates, Passports, Driving Licenses, Student IDs, and Utility Bills).",
+          "OCR & Expiry Engine**: Includes version-tracked submissions, document safety scans, and active expiry dates."
+        ],
+        "installation": [],
+        "technologies": [
+          "Framework**: Jetpack Compose (Modern visual component stack)",
+          "Language**: Kotlin",
+          "Database**: Room (Local SQLite verification store & transaction logs)",
+          "AI Core**: Gemini AI SDK wrapper (Server-side API keys secure injections)",
+          "Local Unit Verification**: Robolectric Visual & Screenshot Testing"
+        ],
+        "architecture": [],
+        "roadmap": [],
+        "todoList": [],
+        "changelog": []
+      }
+    },
+    {
+      "id": 1251750421,
+      "name": "dhoriye-day-",
+      "full_name": "iir20/dhoriye-day-",
+      "description": "anonymous corruption report ",
+      "html_url": "https://github.com/iir20/dhoriye-day-",
+      "homepage": "",
+      "language": "TypeScript",
+      "languages": [
+        "TypeScript",
+        "Dockerfile",
+        "CSS",
+        "HTML"
+      ],
+      "topics": [],
+      "license": {
+        "name": "MIT License",
+        "spdx_id": "MIT"
+      },
+      "stargazers_count": 0,
+      "forks_count": 0,
+      "watchers_count": 0,
+      "open_issues_count": 0,
+      "pushed_at": "2026-05-27T22:19:45Z",
+      "created_at": "2026-05-27T22:03:05Z",
+      "size": 164,
+      "visibility": "public",
+      "default_branch": "main",
+      "clone_url": "https://github.com/iir20/dhoriye-day-.git",
+      "pinned": true,
+      "wip": false,
+      "status": "Active",
+      "latest_commit": {
+        "message": "feat: add offline-first support and GitHub Pages deployment\n\nImplement local database fallback for report submission and data fetching to support static hosting. Configure Vite for relative path resolution and add a GitHub Actions workflow for automated deployments to GitHub Pages.",
+        "date": "2026-05-27T22:19:45Z",
+        "author": "iir20"
+      },
+      "latest_release": null,
+      "readme": "# 🛡️ Dhoraiya De (ধরাইয়া দে) — Whistleblower Web Platform\n\n**Dhoraiya De** is an anonymous anti-corruption platform designed to empower citizens to safely report public grafts, bribery, environmental devastation, and institutional malpractices across Bangladesh. Leveraging a sleek cyberpunk dark terminal aesthetic, the system features an interactive Leaflet open-source regional map, secure media uploads, and server-side **Google Gemini AI** powered audit, threat verification, and priority classification.\n\n---\n\n## 🛠️ System Architecture Overview\n\n```\n             ┌────────────────────────────────────────────────────────┐\n             │                   React 19 / Vite SPA                  │\n             │           (Leaflet Map Engine, Cyber Accent)           │\n             └───────────────────────────┬────────────────────────────┘\n                                         │  Secure POST/GET Requests\n                                         ▼\n             ┌────────────────────────────────────────────────────────┐\n             │                  Express Full-Stack Server             │\n             │          (Asset Compilation & API Orchestration)       │\n             └──────┬──────────────────────────────────────────┬──────┘\n                    │                                          │\n                    │ AI Integrity Scans                       │ Persistence Handshake\n                    ▼                                          ▼\n     ┌──────────────────────────────┐          ┌──────────────────────────────┐\n     │      Google Gemini AI        │          │       Storage Engine         │\n     │      (3.5-flash Engine)      │          │ Dev: reports-db.json         │\n     └──────────────────────────────┘          │ Prod: Managed DB / Firestore │\n                                               └──────────────────────────────┘\n```\n\n---\n\n## 📂 Project Directory Structure\n\n```\ndhoraiya-de/\n├── .github/\n│   ├── workflows/\n│   │   └── ci.yml             # Github Actions: Automates Typescript & Production compile\n│   └── SECURITY.md            # Guidelines for disclosing vulnerabilities & Key Hygiene\n├── src/\n│   ├── components/\n│   │   ├── MapBangladesh.tsx  # Free Open-source Leaflet map (No Google Key required!)\n│   │   ├── ReportSubmission.tsx# Whistleblower reporting panel\n│   │   ├── AudioAlerts.ts     # Sound playback logic (Sonar sweep alert indicators)\n│   │   └── ...\n│   ├── types.ts               # Shared TypeScript structures (Enums, Interfaces)\n│   └── App.tsx                # Master Dashboard UI\n├── server.ts                  # Safe Server-side API & Vite pipeline initialization\n├── reports-db.json            # Development Local flat JSON Database file\n├── LICENSE                    # Production-ready MIT Open-Source license\n└── package.json               # Package manifests & bundlers\n```\n\n---\n\n## 🗄️ Database Management Manual (Development ➡️ Production)\n\nCurrently, the web application operates on a lightweight, zero-configuration local server-side database saved inside `reports-db.json` using the Node.js `fs` file system module. This is outstanding for immediate local coding and testing. However, to transition to **Professional Production Grade**, you should migrate to a resilient database system.\n\nBelow are the blueprints and guides for migrating your platform to production-ready database engines.\n\n### Option A: PostgreSQL with Prisma ORM (Recommended for Relational Data)\n\nThis configuration structure is optimal if you want to perform detailed analytics, audit trails, and maintain strict relationships between reports and timeline verification events.\n\n1. **Install database dependencies**:\n   ```bash\n   npm install @prisma/client\n   npm install -D prisma\n   ```\n\n2. **Initialize Prisma schema file (`prisma/schema.prisma`)**:\n   ```prisma\n   datasource db {\n     provider = \"postgresql\"\n     url      = env(\"DATABASE_URL\")\n   }\n\n   generator client {\n     provider = \"prisma-client-js\"\n   }\n\n   model Report {\n     id             String   @id @default(uuid())\n     title          String\n     category       String\n     ministry       String\n     district       String\n     division       String\n     location       String\n     date           String\n     involvedPeople String\n     description    String   @db.Text\n     isAnonymous    Boolean  @default(true)\n     reporterName   String?\n     upvotes        Int      @default(0)\n     downvotes      Int      @default(0)\n     status         String   @default(\"PENDING\") // PENDING, AI_VERIFIED, UNDER_INVESTIGATION, APPROVED\n     lat            Float?\n     lng            Float?\n     createdAt      DateTime @default(now())\n     \n     // Embedded JSON fields for AI Assessment details & timeline\n     aiAnalysis     Json?    // Stores audit scores, spam risk, & priority\n     timeline       Json     // Stores state sequence array\n   }\n   ```\n\n3. **Transition Express database getters in `server.ts`**:\n   Replace local helper definitions with standard non-blocking queries:\n   ```typescript\n   import { PrismaClient } from '@prisma/client';\n   const prisma = new PrismaClient();\n\n   // Asynchronous Fetch All Reports\n   app.get(\"/api/reports\", async (req, res) => {\n     try {\n       const reports = await prisma.report.findMany({\n         orderBy: { createdAt: 'desc' }\n       });\n       res.json(reports);\n     } catch (err) {\n       res.status(500).json({ error: \"Failed to read database records.\" });\n     }\n   });\n\n   // Asynchronous Save Report\n   app.post(\"/api/reports\", async (req, res) => {\n     try {\n       const newReport = await prisma.report.create({\n         data: { ...req.body }\n       });\n       res.status(201).json(newReport);\n     } catch (err) {\n       res.status(500).json({ error: \"Failed to persist whistleblower claim to primary database.\" });\n     }\n   });\n   ```\n\n---\n\n### Option B: Firebase Firestore NoSQL Database (Highly Scalable document model)\n\nHighly optimized for rapid deployment and absolute reliability without administering any database machines yourself.\n\n1. **Setup Google Cloud Firestore Config with credentials**:\n   ```typescript\n   import { initializeApp } from \"firebase/app\";\n   import { getFirestore, collection, addDoc, getDocs, orderBy, query } from \"firebase/firestore\";\n\n   const firebaseConfig = {\n     apiKey: process.env.FIREBASE_API_KEY,\n     authDomain: \"dhoraiya-de.firebaseapp.com\",\n     projectId: \"dhoraiya-de\",\n     storageBucket: \"dhoraiya-de.appspot.com\",\n     messagingSenderId: \"1234567890\",\n     appId: \"1:1234:web:abcd\"\n   };\n\n   const firebaseApp = initializeApp(firebaseConfig);\n   const db = getFirestore(firebaseApp);\n   ```\n\n2. **Fetch and Save Firestore Records inside `server.ts`**:\n   ```typescript\n   app.get(\"/api/reports\", async (req, res) => {\n     try {\n       const colRef = collection(db, \"reports\");\n       const q = query(colRef, orderBy(\"createdAt\", \"desc\"));\n       const snapshot = await getDocs(q);\n       const dataList = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));\n       res.json(dataList);\n     } catch (err) {\n       res.status(500).json({ error: err.message });\n     }\n   });\n   ```\n\n---\n\n## 🚀 DevOps & CI/CD Pipelines\n\n### 🛡️ GitHub Actions (Continuous Integration Audits)\nThe pipeline is pre-configured to execute in **`.github/workflows/ci.yml`**. On every `push` or `pull_request` to `main` / `master` branches, GitHub's virtualization containers will:\n1. Boot a virtual Ubuntu Node.js runner environment.\n2. Clean-install runtime and development modules utilizing fast caching hooks.\n3. Validate strict code and type compatibility using `npm run lint`.\n4. Validate bundle asset compilation compliance using `npm run build`.\n\nThis triggers automatic feedback rings on PRs, eliminating broken code deployments.\n\n---\n\n## ⚡ Quick Start: Running Platform Locally\n\nPrerequisite: Make sure you have Node.js (version 20+) installed on your laptop/server system.\n\n1. **Clone project and trigger package install**:\n   ```bash\n   git clone https://github.com/yourusername/dhoraiya-de.git\n   cd dhoraiya-de\n   npm install\n   ```\n\n2. **Provide your server configuration secrets**:\n   Create a `.env` in the root (matching `.env.example` structure) and bind keys:\n   ```env\n   # Configure your Gemini authorization secret for live whistle audits\n   GEMINI_API_KEY=AIzaSyD-YourActualGoogleGeminiTokenHere\n   ```\n\n3. **Boot development server (concurrent hot-swapping compilation)**:\n   ```bash\n   npm run dev\n   ```\n   Open **`http://localhost:3000`** in your browser!\n\n---\n\n## 📦 Deploying to Production (SaaS Platforms)\n\nThe platform is optimized for seamless deployment to container clouds (Google Cloud Run) or static fullstack hosts (Render, Heroku, Dokku):\n\n1. **Configure Environment Variables**:\n   Configure these parameters in your cloud dashboard:\n   - `GEMINI_API_KEY`: Secret string credentials for your anti-spam auditor.\n   - `NODE_ENV`: Set to `production`.\n\n2. **Trigger Build Lifecycle**:\n   Your host should run `npm run build` during step processing, then launch the compiled CJS artifacts via `npm start`.\n\n---\n\n## 🔒 Security Auditing & Safe Guidelines\nPlease review **`.github/SECURITY.md`** to learn how to disclose vulnerabilities properly. Always guard client credentials safely and enforce proxy-shield APIs.\nLicense information is found inside the root **`LICENSE`** file.\n",
+      "readme_parsed": {
+        "screenshots": [],
+        "gifs": [],
+        "features": [
+          "Dhoraiya De** is an anonymous anti-corruption platform designed to empower citizens to safely report public grafts, bribery, environmental devastation, and institutional malpractices across Bangladesh. Leveraging a sleek cyberpunk dark terminal aesthetic, the system features an interactive Leaflet open-source regional map, secure media uploads, and server-side **Google Gemini AI** powered audit, threat verification, and priority classification.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "installation": [],
+        "technologies": [],
+        "architecture": [
+          "```",
+          "dhoraiya-de/",
+          "├── .github/",
+          "│   ├── workflows/",
+          "│   │   └── ci.yml             # Github Actions: Automates Typescript & Production compile",
+          "│   └── SECURITY.md            # Guidelines for disclosing vulnerabilities & Key Hygiene",
+          "├── src/",
+          "│   ├── components/",
+          "│   │   ├── MapBangladesh.tsx  # Free Open-source Leaflet map (No Google Key required!)",
+          "│   │   ├── ReportSubmission.tsx# Whistleblower reporting panel",
+          "│   │   ├── AudioAlerts.ts     # Sound playback logic (Sonar sweep alert indicators)",
+          "│   │   └── ...",
+          "│   ├── types.ts               # Shared TypeScript structures (Enums, Interfaces)",
+          "│   └── App.tsx                # Master Dashboard UI",
+          "├── server.ts                  # Safe Server-side API & Vite pipeline initialization",
+          "├── reports-db.json            # Development Local flat JSON Database file",
+          "├── LICENSE                    # Production-ready MIT Open-Source license",
+          "└── package.json               # Package manifests & bundlers",
+          "```"
+        ],
+        "roadmap": [],
+        "todoList": [],
+        "changelog": []
+      }
+    }
+  ],
+  "syncLogs": [
+    {
+      "timestamp": "2026-06-27T18:06:53.493Z",
+      "level": "INFO",
+      "message": "Starting automated GitHub Discovery & Synchronization protocol..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:53.493Z",
+      "level": "WARN",
+      "message": "No authorization credentials provided. Proceeding with rate-limited public endpoints."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:53.493Z",
+      "level": "INFO",
+      "message": "Fetching public profile coordinates for user 'iir20'..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:53.814Z",
+      "level": "SUCCESS",
+      "message": "Successfully matched profile grid. Repos count: 6. Followers: 1."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:53.814Z",
+      "level": "INFO",
+      "message": "Discovering active repositories... Loading full pages catalog."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:53.814Z",
+      "level": "INFO",
+      "message": "Loading page 1 of repositories list..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:54.164Z",
+      "level": "INFO",
+      "message": "Fetched 6 repositories from page 1."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:54.165Z",
+      "level": "SUCCESS",
+      "message": "Discovered total of 6 public subnets across all catalog pages."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:54.165Z",
+      "level": "INFO",
+      "message": "[1/6] Synchronizing details for: \"iir-personal-portfolio-\"..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:55.317Z",
+      "level": "INFO",
+      "message": "[2/6] Synchronizing details for: \"Nexux-Mesh-\"..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:56.530Z",
+      "level": "INFO",
+      "message": "[3/6] Synchronizing details for: \"MINILAM-A-MUSIC-PLAYER-NOTHING-OS-INSPIRED_2026\"..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:57.645Z",
+      "level": "INFO",
+      "message": "[4/6] Synchronizing details for: \"my-personal-portfolio-website-\"..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:58.827Z",
+      "level": "INFO",
+      "message": "[5/6] Synchronizing details for: \"Rent-Truth-Bd-\"..."
+    },
+    {
+      "timestamp": "2026-06-27T18:06:59.981Z",
+      "level": "INFO",
+      "message": "[6/6] Synchronizing details for: \"dhoriye-day-\"..."
+    },
+    {
+      "timestamp": "2026-06-27T18:07:01.062Z",
+      "level": "SUCCESS",
+      "message": "Automatic GitHub Synchronization complete. Synchronized 6 modules."
+    }
+  ],
+  "rateLimit": {
+    "limit": 60,
+    "remaining": 59,
+    "reset": 1782587213
+  }
+}

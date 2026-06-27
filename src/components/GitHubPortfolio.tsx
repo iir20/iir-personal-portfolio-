@@ -91,16 +91,50 @@ export default function GitHubPortfolio({ accentColor, onOpenSyncDashboard }: Gi
   const fetchPortfolio = async () => {
     setIsLoading(true);
     setError(null);
+
+    // Try localStorage first for instant load or static deployment overrides
+    const localOverride = localStorage.getItem("github_portfolio_cache");
+    if (localOverride) {
+      try {
+        const parsed = JSON.parse(localOverride);
+        if (parsed && parsed.profile && parsed.repositories) {
+          setCache(parsed);
+          setIsLoading(false);
+          // Still fetch in background to sync
+        }
+      } catch (e) {
+        console.warn("Stale local storage portfolio cache:", e);
+      }
+    }
+
     try {
       const res = await fetch("/api/github/portfolio");
       if (res.ok) {
         const data = await res.json();
         setCache(data);
+        localStorage.setItem("github_portfolio_cache", JSON.stringify(data));
       } else {
         throw new Error("Unable to retrieve synchronized database.");
       }
     } catch (err: any) {
-      setError(err.message || "Failed to establish handshake with GitHub cache cluster.");
+      // Fallback to static asset for serverless / static deployments
+      try {
+        const staticRes = await fetch("github-portfolio-cache.json");
+        if (staticRes.ok) {
+          const data = await staticRes.json();
+          setCache(data);
+          localStorage.setItem("github_portfolio_cache", JSON.stringify(data));
+          setError(null);
+        } else {
+          if (!localOverride) {
+            throw new Error("Fallback static asset not found.");
+          }
+        }
+      } catch (staticErr) {
+        if (!localStorage.getItem("github_portfolio_cache")) {
+          setError(err.message || "Failed to establish handshake with GitHub cache cluster.");
+        }
+      }
     } finally {
       setIsLoading(false);
     }
@@ -125,7 +159,32 @@ export default function GitHubPortfolio({ accentColor, onOpenSyncDashboard }: Gi
         .then(async (res) => (res.ok ? res.json() : null))
         .catch(() => null);
 
-      const [readmeData, detailsData] = await Promise.all([readmePromise, detailsPromise]);
+      let [readmeData, detailsData] = await Promise.all([readmePromise, detailsPromise]);
+
+      // Handle static / GitHub pages fallback for README
+      if (!readmeData && repo.readme) {
+        readmeData = {
+          rawMarkdown: repo.readme,
+          ...(repo.readme_parsed || {})
+        };
+      }
+
+      // Handle static / GitHub pages fallback for Details
+      if (!detailsData) {
+        detailsData = {
+          commits: repo.latest_commit ? [
+            {
+              commit: {
+                message: repo.latest_commit.message,
+                author: { date: repo.latest_commit.date, name: repo.latest_commit.author }
+              },
+              author: { login: repo.latest_commit.author }
+            }
+          ] : [],
+          releases: repo.latest_release ? [repo.latest_release] : [],
+          contributors: [{ login: "iir20", avatar_url: cache?.profile?.avatar_url || "https://avatars.githubusercontent.com/u/182823546?v=4", contributions: 42 }]
+        };
+      }
 
       setRepoReadme(readmeData);
       setRepoDetails(detailsData);

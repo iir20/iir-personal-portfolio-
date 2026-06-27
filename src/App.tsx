@@ -162,38 +162,78 @@ export default function App() {
     if (!booted) return;
 
     const getGHStats = async () => {
+      // 1. Try localStorage first
+      const localCache = localStorage.getItem("github_portfolio_cache");
+      if (localCache) {
+        try {
+          const data = JSON.parse(localCache);
+          if (data && data.profile) {
+            setGhStats({
+              followers: data.profile.followers || 1,
+              repos: data.profile.public_repos || data.repositories?.length || 6,
+              stars: data.profile.totalStars || 42,
+              avatar: data.profile.avatar_url || "https://avatars.githubusercontent.com/u/182823546?v=4"
+            });
+            // Still fetch in background
+          }
+        } catch (e) {
+          console.warn(e);
+        }
+      }
+
       try {
         const res = await fetch("/api/github/portfolio");
         if (res.ok) {
           const data = await res.json();
           if (data && data.profile) {
             setGhStats({
-              followers: data.profile.followers || 12,
-              repos: data.profile.publicRepos || data.repositories?.length || 18,
+              followers: data.profile.followers || 1,
+              repos: data.profile.public_repos || data.repositories?.length || 6,
               stars: data.profile.totalStars || 42,
-              avatar: data.profile.avatarUrl || "https://avatars.githubusercontent.com/u/100412845?v=4"
+              avatar: data.profile.avatar_url || "https://avatars.githubusercontent.com/u/182823546?v=4"
             });
+            localStorage.setItem("github_portfolio_cache", JSON.stringify(data));
             return;
           }
         }
+
+        // 2. Try static cache file
+        const staticRes = await fetch("github-portfolio-cache.json");
+        if (staticRes.ok) {
+          const data = await staticRes.json();
+          if (data && data.profile) {
+            setGhStats({
+              followers: data.profile.followers || 1,
+              repos: data.profile.public_repos || data.repositories?.length || 6,
+              stars: data.profile.totalStars || 42,
+              avatar: data.profile.avatar_url || "https://avatars.githubusercontent.com/u/182823546?v=4"
+            });
+            localStorage.setItem("github_portfolio_cache", JSON.stringify(data));
+            return;
+          }
+        }
+
+        // 3. Try direct GitHub API
         const directRes = await fetch("https://api.github.com/users/iir20");
         if (directRes.ok) {
           const data = await directRes.json();
           setGhStats({
-            followers: data.followers || 12,
-            repos: data.public_repos || 18,
+            followers: data.followers || 1,
+            repos: data.public_repos || 6,
             stars: 42,
-            avatar: data.avatar_url || "https://avatars.githubusercontent.com/u/100412845?v=4"
+            avatar: data.avatar_url || "https://avatars.githubusercontent.com/u/182823546?v=4"
           });
         }
       } catch (err) {
-        // Safe bypass defaults loaded
-        setGhStats({
-          followers: 12,
-          repos: 18,
-          stars: 42,
-          avatar: "https://avatars.githubusercontent.com/u/100412845?v=4"
-        });
+        // Safe bypass defaults loaded if no localStorage cache exists
+        if (!localStorage.getItem("github_portfolio_cache")) {
+          setGhStats({
+            followers: 1,
+            repos: 6,
+            stars: 42,
+            avatar: "https://avatars.githubusercontent.com/u/182823546?v=4"
+          });
+        }
       }
     };
 
