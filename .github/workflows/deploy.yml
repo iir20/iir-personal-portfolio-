@@ -44,10 +44,18 @@ jobs:
           NODE_ENV: production
 
       - name: 🗺️ Generate Dynamic Sitemap & SEO Index
+        id: sitemap
         run: |
-          REPO_NAME="${{ github.event.repository.name }}"
-          OWNER_NAME="${{ github.repository_owner }}"
-          SITE_URL="https://${OWNER_NAME}.github.io/${REPO_NAME}/"
+          if [ -f "./public/CNAME" ]; then
+            CUSTOM_DOMAIN=$(cat ./public/CNAME | xargs)
+            SITE_URL="https://${CUSTOM_DOMAIN}/"
+            echo "Detected custom CNAME domain: ${CUSTOM_DOMAIN}"
+          else
+            REPO_NAME="${{ github.event.repository.name }}"
+            OWNER_NAME="${{ github.repository_owner }}"
+            SITE_URL="https://${OWNER_NAME}.github.io/${REPO_NAME}/"
+          fi
+          echo "site_url=${SITE_URL}" >> $GITHUB_OUTPUT
           echo "Generating sitemap for site URL: ${SITE_URL}"
           mkdir -p ./dist
           cat <<EOF > ./dist/sitemap.xml
@@ -68,6 +76,14 @@ jobs:
           </urlset>
           EOF
           echo "✅ Sitemap.xml generated successfully inside production bundle!"
+
+          if [ -f "./dist/robots.txt" ]; then
+            echo "Optimizing robots.txt for site URL: ${SITE_URL}"
+            CLEAN_HOST=$(echo "${SITE_URL}" | sed -e 's|^[^/]*//||' -e 's|/$||')
+            sed -i "s|Host:.*|Host: ${CLEAN_HOST}|g" ./dist/robots.txt
+            sed -i "s|Sitemap:.*|Sitemap: ${SITE_URL}sitemap.xml|g" ./dist/robots.txt
+            echo "✅ robots.txt successfully updated!"
+          fi
 
       - name: ⚙️ Verify Build Output Integrity
         run: |
@@ -121,13 +137,13 @@ jobs:
             ---
 
             ### 🔗 Live Interactive Link
-            🚀 **Live Site URL**: [https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
+            🚀 **Live Site URL**: [${{ steps.sitemap.outputs.site_url }}](${{ steps.sitemap.outputs.site_url }})
 
             ---
 
             ### 🛠️ Release Highlights
             - **Automated Compilation**: Compiled and audited dynamically using Vite & TypeScript.
-            - **Search Engine Optimization**: Interactive sitemap indexes registered dynamically for `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/`.
+            - **Search Engine Optimization**: Interactive sitemap indexes registered dynamically for `${{ steps.sitemap.outputs.site_url }}`.
             - **Immutable Bundle Packaging**: The optimized client bundle is pre-compressed and attached as a release binary below.
 
             *Created and signed automatically by the CI/CD Release Engine.*
