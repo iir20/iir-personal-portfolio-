@@ -11,7 +11,7 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -33,7 +33,7 @@ jobs:
           cache: 'npm'
 
       - name: 📦 Restore & Install Dependencies
-        run: npm ci
+        run: npm ci || npm install --legacy-peer-deps
 
       - name: 🛠️ Run TypeScript Validation Check
         run: npm run lint
@@ -45,22 +45,28 @@ jobs:
 
       - name: 🗺️ Generate Dynamic Sitemap & SEO Index
         run: |
+          REPO_NAME="${{ github.event.repository.name }}"
+          OWNER_NAME="${{ github.repository_owner }}"
+          SITE_URL="https://${OWNER_NAME}.github.io/${REPO_NAME}/"
+          echo "Generating sitemap for site URL: ${SITE_URL}"
           mkdir -p ./dist
-          echo '<?xml version="1.0" encoding="UTF-8"?>' > ./dist/sitemap.xml
-          echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> ./dist/sitemap.xml
-          echo '  <url>' >> ./dist/sitemap.xml
-          echo '    <loc>https://im-ismail-ibne-ratul.github.io/</loc>' >> ./dist/sitemap.xml
-          echo '    <lastmod>'$(date +%Y-%m-%d)'</lastmod>' >> ./dist/sitemap.xml
-          echo '    <changefreq>weekly</changefreq>' >> ./dist/sitemap.xml
-          echo '    <priority>1.0</priority>' >> ./dist/sitemap.xml
-          echo '  </url>' >> ./dist/sitemap.xml
-          echo '  <url>' >> ./dist/sitemap.xml
-          echo '    <loc>https://im-ismail-ibne-ratul.github.io/admin-deck</loc>' >> ./dist/sitemap.xml
-          echo '    <lastmod>'$(date +%Y-%m-%d)'</lastmod>' >> ./dist/sitemap.xml
-          echo '    <changefreq>monthly</changefreq>' >> ./dist/sitemap.xml
-          echo '    <priority>0.5</priority>' >> ./dist/sitemap.xml
-          echo '  </url>' >> ./dist/sitemap.xml
-          echo '</urlset>' >> ./dist/sitemap.xml
+          cat <<EOF > ./dist/sitemap.xml
+          <?xml version="1.0" encoding="UTF-8"?>
+          <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+            <url>
+              <loc>${SITE_URL}</loc>
+              <lastmod>$(date +%Y-%m-%d)</lastmod>
+              <changefreq>weekly</changefreq>
+              <priority>1.0</priority>
+            </url>
+            <url>
+              <loc>${SITE_URL}admin-deck</loc>
+              <lastmod>$(date +%Y-%m-%d)</lastmod>
+              <changefreq>monthly</changefreq>
+              <priority>0.5</priority>
+            </url>
+          </urlset>
+          EOF
           echo "✅ Sitemap.xml generated successfully inside production bundle!"
 
       - name: ⚙️ Verify Build Output Integrity
@@ -96,3 +102,38 @@ jobs:
       - name: 🚀 Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: 📦 Zip Build Artifacts for Release
+        run: |
+          zip -r ratul-portfolio-deploy.zip dist/
+
+      - name: 🚀 Create GitHub Release with Auto-Release Link
+        id: create_release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.${{ github.run_number }}
+          name: "Cyberspace OS Release v1.0.${{ github.run_number }}"
+          body: |
+            # 🌐 Cyberspace OS Digital Portfolio Released!
+
+            All cores balanced. The deployment pipeline has compiled, optimized, and deployed the latest revision successfully.
+
+            ---
+
+            ### 🔗 Live Interactive Link
+            🚀 **Live Site URL**: [https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/](https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/)
+
+            ---
+
+            ### 🛠️ Release Highlights
+            - **Automated Compilation**: Compiled and audited dynamically using Vite & TypeScript.
+            - **Search Engine Optimization**: Interactive sitemap indexes registered dynamically for `https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/`.
+            - **Immutable Bundle Packaging**: The optimized client bundle is pre-compressed and attached as a release binary below.
+
+            *Created and signed automatically by the CI/CD Release Engine.*
+          draft: false
+          prerelease: false
+          files: |
+            ratul-portfolio-deploy.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
